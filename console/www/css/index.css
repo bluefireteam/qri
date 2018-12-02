@@ -1,0 +1,107 @@
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+}
+
+.qri {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.side-container {
+  width: 20%;
+  position: relative;
+}
+
+.left-container {
+  background-color: red;
+
+}
+
+.right-container {
+  background-color: blue;
+}
+
+.dpad-container {
+  position: absolute;
+  width: 70%;
+  padding-top: 70%;
+  height: 0;
+  top: 20%;
+  left: 50%;
+  margin-left: -35%;
+}
+
+.dpad-key {
+  background-color: #000;
+  position: absolute;
+}
+
+.dpad-vertical {
+  width: 30%;
+  height: 50%;
+  left: 35%;
+}
+
+.dpad-horizontal {
+  height: 30%;
+  width: 50%;
+  top: 35%;
+}
+
+.dpad-up {
+  top: 0;
+}
+
+.dpad-down {
+  bottom: 0;
+}
+
+.dpad-left {
+  left: 0;
+}
+
+.dpad-right {
+  right: 0;
+}
+
+.action-buttons-container {
+  position: absolute;
+  width: 80%;
+  padding-top: 80%;
+  height: 0;
+  top: 20%;
+  left: 50%;
+  margin-left: -40%;
+}
+
+.action-button {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  border-radius: 100%;
+}
+
+.y-button {
+  background-color: #820091;
+  top: 0;
+  right: 0;
+}
+
+.x-button {
+  background-color: #925a99;
+  bottom: 0;
+  left: 0;
+}
+
+.screen-container {
+  width: 60%;
+  background-color: #a9a9a9;
+}
