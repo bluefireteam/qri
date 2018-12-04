@@ -1,3 +1,4 @@
+import controls from "./modules/controls";
 import Engine from "engine"
 
 window.Console = {
@@ -19,5 +20,6 @@ window.Console = {
     const scaleFactor = width / 160;
     const engine = Engine(scaleFactor, canvas)
     engine.loadGame(gameData);
+    controls.init(engine.ondPadDown, engine.ondPadUp);
   }
 }
