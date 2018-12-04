@@ -15,9 +15,7 @@ const defaultPalette = [
 const now = () => new Date().getTime();
 
 const evalGame = game => {
-  const context = {};
-  eval.call(context, game);
-  return context
+  eval.call({}, game);
 }
 
 export default ( scaleFactor, canvas, palette = defaultPalette) => {
@@ -27,8 +25,14 @@ export default ( scaleFactor, canvas, palette = defaultPalette) => {
     unload: () => {
       running = false
     },
+    ondPadDown: key => {
+      if (dpadDown) dpadDown(key);
+    },
+    ondPadUp: key => {
+      if (dpadUp) dpadUp(key);
+    },
     loadGame: gameData => {
-      const game = evalGame(gameData);
+      evalGame(gameData);
       const ctx = canvas.getContext("2d")
       const graphics = Graphics(ctx, palette, scaleFactor)
 

@@ -18,10 +18,12 @@ function load() {
 }
 
 function dpadDown(key) {
+  console.log(1, key)
   if (key === "UP" || key === "DOWN")  move = key
 }
 
 function dpadUp(key) {
+  console.log(2, key)
   if (key === "UP" || key === "DOWN")  move = null
 }
 
