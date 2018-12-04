@@ -12,16 +12,25 @@ const defaultPalette = [
   "#dcf5ff"
 ]
 
-export default (( scaleFactor, canvas, palette = defaultPalette) => {
+const now = () => new Date().getTime();
+
+const evalGame = game => {
+  const context = {};
+  eval.call(context, game);
+  return context
+}
+
+export default ( scaleFactor, canvas, palette = defaultPalette) => {
   let running = true;
 
   return ({
     unload: () => {
       running = false
     },
-    loadGame: game => {
+    loadGame: gameData => {
+      const game = evalGame(gameData);
       const ctx = canvas.getContext("2d")
-      const graphics = Graphics(ctx)
+      const graphics = Graphics(ctx, palette, scaleFactor)
 
       let time = now();
 
@@ -31,8 +40,8 @@ export default (( scaleFactor, canvas, palette = defaultPalette) => {
         const delta = tickTime - time;
         time = tickTime;
 
-        if (game.update) game.update(delta)
-        if (game.render) game.render(graphics)
+        if (update) update(delta)
+        if (render) render(graphics)
 
         if (running) {
           requestAnimationFrame(tick);
@@ -42,4 +51,4 @@ export default (( scaleFactor, canvas, palette = defaultPalette) => {
       tick();
     }
   })
-})
+}

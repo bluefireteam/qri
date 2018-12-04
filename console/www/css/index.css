@@ -104,4 +104,7 @@ body {
 .screen-container {
   width: 60%;
   background-color: #a9a9a9;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }

@@ -1,12 +1,12 @@
-import engine from "engine"
+import Engine from "engine"
 
 window.Console = {
   start: () => {
     screen.orientation.lock("landscape");
 
     const canvasParent = document.querySelector(".screen-container");
-    const width = canvasParent.offsetWidth;
-    const height = canvasParent.offsetHeight;
+    const height = canvasParent.offsetHeight - (canvasParent.offsetHeight * 0.2);
+    const width = height;
 
     const canvas = document.getElementById("game-screen");
     canvas.width = width;
@@ -15,5 +15,9 @@ window.Console = {
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = "#000";
     ctx.fillRect(0, 0, width, height);
+
+    const scaleFactor = width / 160;
+    const engine = Engine(scaleFactor, canvas)
+    engine.loadGame(gameData);
   }
 }

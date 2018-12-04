@@ -1,0 +1,10 @@
+{
+  "name": "qri-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "uglify-js": "^3.4.9"
+  }
+}
