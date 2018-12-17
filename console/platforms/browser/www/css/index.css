@@ -16,13 +16,12 @@ body {
 }
 
 .side-container {
-  width: 20%;
+  width: 30%;
   position: relative;
 }
 
 .left-container {
   background-color: red;
-
 }
 
 .right-container {
