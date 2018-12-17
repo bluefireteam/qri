@@ -6,7 +6,12 @@ import thunk from "redux-thunk";
 
 import reducers from "./reducers";
 
-const store = createStore(combineReducers(reducers))';
+import IDE from "./containers/IDE";
+
+const store = createStore(
+  combineReducers(reducers),
+  applyMiddleware(thunk),
+);
 
 const Index = () => (
   <Provider store={store}>
