@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import WelcomePanel from "../../components/WelcomePanel";
 
 import { readProject } from "../../actions/fs";
+import { showErrorMessage } from "../../actions/messages";
 const { remote: { dialog } } = window.require("electron");
 
 const mapDispatchToProps = dispatch => ({
@@ -11,7 +12,7 @@ const mapDispatchToProps = dispatch => ({
           if (file.endsWith("qri.json")) {
             dispatch(readProject(file));
           } else {
-            onError("Invalid qri.json file");
+            dispatch(showErrorMessage("Invalid qri.json file"));
           }
         }
       });

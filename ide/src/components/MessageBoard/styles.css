@@ -1,0 +1,14 @@
+.message-board {
+  position: fixed;
+  width: 300px;
+  right: 20px;
+  top: 20px;
+}
+
+.message-board ul {
+  list-style: none;
+}
+
+.message-board ul li.error {
+  background-color: red;
+}
