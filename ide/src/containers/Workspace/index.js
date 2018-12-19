@@ -1,19 +1,27 @@
 import { connect } from "react-redux";
 import Workspace from "../../components/Workspace";
 
-const findEditorContent = (editor, scripts, sprites) => {
-  if (editor.type = "SCRIPT") {
-    return (scripts.find(script => script.fileName === editor.fileName) || {}).content
+const getSelectedEditor = (editors, scripts, sprites) => {
+  const selectedEditor = editors.find(e => e.selected);
+
+  if (selectedEditor) {
+    let content;
+    if (selectedEditor.type === "SCRIPT") {
+      content = (scripts.find(script => script.fileName === selectedEditor.fileName) || {}).content
+    }
+
+    return {
+      ...selectedEditor,
+      content,
+    }
   }
 
   return null;
 }
 
 const mapStateToProps = ({ workspace: { editors }, scripts, sprites }) => ({
-  editors: editors.map(editor => ({
-    fileName: editor.fileName,
-    content: findEditorContent(editor, scripts, sprites)
-  }))
+  editors,
+  selectedEditor: getSelectedEditor(editors, scripts.files, sprites),
 });
 
 const mapDispatchToProps = dispatch => ({

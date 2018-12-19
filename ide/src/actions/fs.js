@@ -1,7 +1,7 @@
 const fs = window.require("fs");
 const path = window.require("path");
 
-export const readScript = scriptName => (dispatch, getState) => {
+export const readScript = scriptName => (dispatch, getState) => new Promise((resolve, reject) => {
   const { project: { projectPath } } = getState()
 
   const scriptPath = path.join(projectPath, "sources", scriptName);
@@ -11,7 +11,9 @@ export const readScript = scriptName => (dispatch, getState) => {
     type: "READ_SCRIPT_CONTENT",
     payload: { scriptName, fileContent }
   })
-}
+
+  resolve();
+})
 
 export const readProject = projectFilePath => dispatch => {
   const projectPath = path.dirname(projectFilePath);
