@@ -1,6 +1,18 @@
 const fs = window.require("fs");
 const path = window.require("path");
 
+export const readScript = scriptName => (dispatch, getState) => {
+  const { project: { projectPath } } = getState()
+
+  const scriptPath = path.join(projectPath, "sources", scriptName);
+  const fileContent = fs.readFileSync(scriptPath, "utf8");
+
+  dispatch({
+    type: "READ_SCRIPT_CONTENT",
+    payload: { scriptName, fileContent }
+  })
+}
+
 export const readProject = projectFilePath => dispatch => {
   const projectPath = path.dirname(projectFilePath);
   const projectFile = JSON.parse(fs.readFileSync(projectFilePath, "utf8"));

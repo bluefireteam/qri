@@ -1,0 +1,8 @@
+.side-bar-item-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.side-bar-item-list li {
+  cursor: pointer;
+}

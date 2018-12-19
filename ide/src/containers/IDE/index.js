@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import WelcomePanel from "../WelcomPanel";
 import MessageBoard from "../MessageBoard";
 import SideBar from "../SideBar";
+import Workspace from "../Workspace";
 
 const mapStateToProps = ({ project: { name, projectPath } }) => ({
   name,
@@ -19,7 +20,7 @@ const IDEPanel = ({ }) => (
         <SideBar />
       </div>
       <div className="editor-panel panel">
-        editor-panel
+        <Workspace />
       </div>
     </div>
   </div>

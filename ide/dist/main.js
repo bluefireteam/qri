@@ -145,6 +145,39 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/c
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/ScriptEditor/styles.css":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/ScriptEditor/styles.css ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/ScriptEditor/styles.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/SideBar/styles.css":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/SideBar/styles.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".side-bar-item-list {\\n  list-style: none;\\n  padding-left: 0px;\\n}\\n\\n.side-bar-item-list li {\\n  cursor: pointer;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/SideBar/styles.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/Workspace/styles.css":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Workspace/styles.css ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/Workspace/styles.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/main.css":
 /*!************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/main.css ***!
@@ -658,11 +691,11 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 /*!***************************!*\
   !*** ./src/actions/fs.js ***!
   \***************************/
-/*! exports provided: readProject */
+/*! exports provided: readScript, readProject */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"readProject\", function() { return readProject; });\nvar fs = window.require(\"fs\");\n\nvar path = window.require(\"path\");\n\nvar readProject = function readProject(projectFilePath) {\n  return function (dispatch) {\n    var projectPath = path.dirname(projectFilePath);\n    var projectFile = JSON.parse(fs.readFileSync(projectFilePath, \"utf8\"));\n    fs.readdir(path.join(projectPath, \"sources\"), function (err, files) {\n      files.forEach(function (fileName) {\n        dispatch({\n          type: \"READ_SCRIPT\",\n          payload: {\n            fileName: fileName\n          }\n        });\n      });\n    });\n    dispatch({\n      type: \"READ_PROJECT\",\n      payload: {\n        projectPath: projectPath,\n        name: projectFile.name\n      }\n    });\n  };\n};\n\n//# sourceURL=webpack:///./src/actions/fs.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"readScript\", function() { return readScript; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"readProject\", function() { return readProject; });\nvar fs = window.require(\"fs\");\n\nvar path = window.require(\"path\");\n\nvar readScript = function readScript(scriptName) {\n  return function (dispatch, getState) {\n    var _getState = getState(),\n        projectPath = _getState.project.projectPath;\n\n    var scriptPath = path.join(projectPath, \"sources\", scriptName);\n    var fileContent = fs.readFileSync(scriptPath, \"utf8\");\n    dispatch({\n      type: \"READ_SCRIPT_CONTENT\",\n      payload: {\n        scriptName: scriptName,\n        fileContent: fileContent\n      }\n    });\n  };\n};\nvar readProject = function readProject(projectFilePath) {\n  return function (dispatch) {\n    var projectPath = path.dirname(projectFilePath);\n    var projectFile = JSON.parse(fs.readFileSync(projectFilePath, \"utf8\"));\n    fs.readdir(path.join(projectPath, \"sources\"), function (err, files) {\n      files.forEach(function (fileName) {\n        dispatch({\n          type: \"READ_SCRIPT\",\n          payload: {\n            fileName: fileName\n          }\n        });\n      });\n    });\n    dispatch({\n      type: \"READ_PROJECT\",\n      payload: {\n        projectPath: projectPath,\n        name: projectFile.name\n      }\n    });\n  };\n};\n\n//# sourceURL=webpack:///./src/actions/fs.js?");
 
 /***/ }),
 
@@ -701,6 +734,29 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 
 /***/ }),
 
+/***/ "./src/components/ScriptEditor/index.js":
+/*!**********************************************!*\
+  !*** ./src/components/ScriptEditor/index.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ \"./src/components/ScriptEditor/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var fileName = _ref.fileName,\n      value = _ref.value;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, content);\n});\n\n//# sourceURL=webpack:///./src/components/ScriptEditor/index.js?");
+
+/***/ }),
+
+/***/ "./src/components/ScriptEditor/styles.css":
+/*!************************************************!*\
+  !*** ./src/components/ScriptEditor/styles.css ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/components/ScriptEditor/styles.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/components/ScriptEditor/styles.css?");
+
+/***/ }),
+
 /***/ "./src/components/SideBar/index.js":
 /*!*****************************************!*\
   !*** ./src/components/SideBar/index.js ***!
@@ -709,7 +765,18 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var scripts = _ref.scripts;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"ul\", {\n    className: \"side-bar-item-list\"\n  }, scripts.map(function (_ref2) {\n    var fileName = _ref2.fileName;\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"li\", {\n      key: \"Script-\".concat(fileName)\n    }, fileName);\n  })));\n});\n\n//# sourceURL=webpack:///./src/components/SideBar/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ \"./src/components/SideBar/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var scripts = _ref.scripts,\n      onSelectResource = _ref.onSelectResource;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h2\", null, \" Scripts \"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"ul\", {\n    className: \"side-bar-item-list\"\n  }, scripts.map(function (script) {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"li\", {\n      key: \"Script-\".concat(script.fileName),\n      onClick: function onClick() {\n        return onSelectResource(\"SCRIPT\", script);\n      }\n    }, script.fileName);\n  }))));\n});\n\n//# sourceURL=webpack:///./src/components/SideBar/index.js?");
+
+/***/ }),
+
+/***/ "./src/components/SideBar/styles.css":
+/*!*******************************************!*\
+  !*** ./src/components/SideBar/styles.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/components/SideBar/styles.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/components/SideBar/styles.css?");
 
 /***/ }),
 
@@ -725,6 +792,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
+/***/ "./src/components/Workspace/index.js":
+/*!*******************************************!*\
+  !*** ./src/components/Workspace/index.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _ScriptEditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ScriptEditor */ \"./src/components/ScriptEditor/index.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ \"./src/components/Workspace/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var editors = _ref.editors;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"full-size\"\n  }, editors.length ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ScriptEditor__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    fileName: editors[0].fileName,\n    value: editors[0].content\n  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"span\", null, \" Nothing opened yet, use the side bar on the left to open resources. \"));\n});\n\n//# sourceURL=webpack:///./src/components/Workspace/index.js?");
+
+/***/ }),
+
+/***/ "./src/components/Workspace/styles.css":
+/*!*********************************************!*\
+  !*** ./src/components/Workspace/styles.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/components/Workspace/styles.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/components/Workspace/styles.css?");
+
+/***/ }),
+
 /***/ "./src/containers/IDE/index.js":
 /*!*************************************!*\
   !*** ./src/containers/IDE/index.js ***!
@@ -733,7 +823,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _WelcomPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../WelcomPanel */ \"./src/containers/WelcomPanel/index.js\");\n/* harmony import */ var _MessageBoard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../MessageBoard */ \"./src/containers/MessageBoard/index.js\");\n/* harmony import */ var _SideBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../SideBar */ \"./src/containers/SideBar/index.js\");\nfunction _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError(\"Cannot destructure undefined\"); }\n\n\n\n\n\n\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var _ref$project = _ref.project,\n      name = _ref$project.name,\n      projectPath = _ref$project.projectPath;\n  return {\n    name: name,\n    projectPath: projectPath\n  };\n};\n\nvar IDEPanel = function IDEPanel(_ref2) {\n  _objectDestructuringEmpty(_ref2);\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"editor full-size\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"toolbar panel\"\n  }, \"toolbar\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"main-panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"side-panel panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SideBar__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"editor-panel panel\"\n  }, \"editor-panel\")));\n};\n\nvar IDE = function IDE(_ref3) {\n  var name = _ref3.name,\n      projectPath = _ref3.projectPath;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"full-size\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MessageBoard__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null), name ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IDEPanel, null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WelcomPanel__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(mapStateToProps)(IDE));\n\n//# sourceURL=webpack:///./src/containers/IDE/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _WelcomPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../WelcomPanel */ \"./src/containers/WelcomPanel/index.js\");\n/* harmony import */ var _MessageBoard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../MessageBoard */ \"./src/containers/MessageBoard/index.js\");\n/* harmony import */ var _SideBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../SideBar */ \"./src/containers/SideBar/index.js\");\n/* harmony import */ var _Workspace__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Workspace */ \"./src/containers/Workspace/index.js\");\nfunction _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError(\"Cannot destructure undefined\"); }\n\n\n\n\n\n\n\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var _ref$project = _ref.project,\n      name = _ref$project.name,\n      projectPath = _ref$project.projectPath;\n  return {\n    name: name,\n    projectPath: projectPath\n  };\n};\n\nvar IDEPanel = function IDEPanel(_ref2) {\n  _objectDestructuringEmpty(_ref2);\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"editor full-size\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"toolbar panel\"\n  }, \"toolbar\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"main-panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"side-panel panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SideBar__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"editor-panel panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Workspace__WEBPACK_IMPORTED_MODULE_5__[\"default\"], null))));\n};\n\nvar IDE = function IDE(_ref3) {\n  var name = _ref3.name,\n      projectPath = _ref3.projectPath;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"full-size\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MessageBoard__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null), name ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IDEPanel, null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WelcomPanel__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(mapStateToProps)(IDE));\n\n//# sourceURL=webpack:///./src/containers/IDE/index.js?");
 
 /***/ }),
 
@@ -757,7 +847,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _components_SideBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/SideBar */ \"./src/components/SideBar/index.js\");\n\n\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var files = _ref.scripts.files;\n  return {\n    scripts: files\n  };\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__[\"connect\"])(mapStateToProps)(_components_SideBar__WEBPACK_IMPORTED_MODULE_1__[\"default\"]));\n\n//# sourceURL=webpack:///./src/containers/SideBar/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _components_SideBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/SideBar */ \"./src/components/SideBar/index.js\");\n/* harmony import */ var _actions_fs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/fs */ \"./src/actions/fs.js\");\n\n\n\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var files = _ref.scripts.files;\n  return {\n    scripts: files\n  };\n};\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {\n    onSelectResource: function onSelectResource(type, resource) {\n      if (type === \"SCRIPT\") {\n        dispatch(Object(_actions_fs__WEBPACK_IMPORTED_MODULE_2__[\"readScript\"])(resource.fileName));\n      }\n    }\n  };\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__[\"connect\"])(mapStateToProps, mapDispatchToProps)(_components_SideBar__WEBPACK_IMPORTED_MODULE_1__[\"default\"]));\n\n//# sourceURL=webpack:///./src/containers/SideBar/index.js?");
 
 /***/ }),
 
@@ -770,6 +860,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _components_WelcomePanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/WelcomePanel */ \"./src/components/WelcomePanel/index.js\");\n/* harmony import */ var _actions_fs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/fs */ \"./src/actions/fs.js\");\n/* harmony import */ var _actions_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/messages */ \"./src/actions/messages.js\");\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\n\n\n\n\n\nvar _window$require = window.require(\"electron\"),\n    dialog = _window$require.remote.dialog;\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {\n    onChooseProject: function onChooseProject() {\n      dialog.showOpenDialog(null, {\n        property: [\"openFile\"]\n      }, function (_ref) {\n        var _ref2 = _slicedToArray(_ref, 1),\n            file = _ref2[0];\n\n        if (file) {\n          if (file.endsWith(\"qri.json\")) {\n            dispatch(Object(_actions_fs__WEBPACK_IMPORTED_MODULE_2__[\"readProject\"])(file));\n          } else {\n            dispatch(Object(_actions_messages__WEBPACK_IMPORTED_MODULE_3__[\"showErrorMessage\"])(\"Invalid qri.json file\"));\n          }\n        }\n      });\n    }\n  };\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__[\"connect\"])(undefined, mapDispatchToProps)(_components_WelcomePanel__WEBPACK_IMPORTED_MODULE_1__[\"default\"]));\n\n//# sourceURL=webpack:///./src/containers/WelcomPanel/index.js?");
+
+/***/ }),
+
+/***/ "./src/containers/Workspace/index.js":
+/*!*******************************************!*\
+  !*** ./src/containers/Workspace/index.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _components_Workspace__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Workspace */ \"./src/components/Workspace/index.js\");\n\n\n\nvar findEditorContent = function findEditorContent(editor, scripts, sprites) {\n  if (editor.type = \"SCRIPT\") {\n    return (scripts.find(function (script) {\n      return script.fileName === editor.fileName;\n    }) || {}).content;\n  }\n\n  return null;\n};\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var editors = _ref.workspace.editors,\n      scripts = _ref.scripts,\n      sprites = _ref.sprites;\n  return {\n    editors: editors.map(function (editor) {\n      return {\n        fileName: editor.fileName,\n        content: findEditorContent(editor, scripts, sprites)\n      };\n    })\n  };\n};\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {};\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__[\"connect\"])(mapStateToProps, mapDispatchToProps)(_components_Workspace__WEBPACK_IMPORTED_MODULE_1__[\"default\"]));\n\n//# sourceURL=webpack:///./src/containers/Workspace/index.js?");
 
 /***/ }),
 
@@ -804,7 +906,7 @@ eval("\nvar content = __webpack_require__(/*! !../node_modules/css-loader/dist/c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scripts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts */ \"./src/reducers/scripts.js\");\n/* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project */ \"./src/reducers/project.js\");\n/* harmony import */ var _messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./messages */ \"./src/reducers/messages.js\");\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  project: _project__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  scripts: _scripts__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  messages: _messages__WEBPACK_IMPORTED_MODULE_2__[\"default\"]\n});\n\n//# sourceURL=webpack:///./src/reducers/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scripts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts */ \"./src/reducers/scripts.js\");\n/* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project */ \"./src/reducers/project.js\");\n/* harmony import */ var _messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./messages */ \"./src/reducers/messages.js\");\n/* harmony import */ var _workspace__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./workspace */ \"./src/reducers/workspace.js\");\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  project: _project__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  scripts: _scripts__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  messages: _messages__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  workspace: _workspace__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n});\n\n//# sourceURL=webpack:///./src/reducers/index.js?");
 
 /***/ }),
 
@@ -840,7 +942,19 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction _objectSpread(target
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nvar initialState = {\n  files: []\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case \"READ_SCRIPT\":\n      {\n        var script = {\n          fileName: action.payload.fileName,\n          loaded: false,\n          modified: false\n        };\n        return _objectSpread({}, state, {\n          files: [].concat(_toConsumableArray(state.files), [script])\n        });\n      }\n  }\n\n  return state;\n});\n\n//# sourceURL=webpack:///./src/reducers/scripts.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nvar initialState = {\n  files: []\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case \"READ_SCRIPT\":\n      {\n        var script = {\n          fileName: action.payload.fileName,\n          loaded: false,\n          modified: false,\n          content: null\n        };\n        return _objectSpread({}, state, {\n          files: [].concat(_toConsumableArray(state.files), [script])\n        });\n      }\n\n    case \"READ_SCRIPT_CONTENT\":\n      {\n        var _action$payload = action.payload,\n            scriptName = _action$payload.scriptName,\n            fileContent = _action$payload.fileContent;\n        console.log(action);\n        return _objectSpread({}, state, {\n          files: state.files.map(function (file) {\n            if (file.fileName === scriptName) {\n              return _objectSpread({}, file, {\n                loaded: true,\n                content: fileContent\n              });\n            }\n\n            return file;\n          })\n        });\n      }\n  }\n\n  return state;\n});\n\n//# sourceURL=webpack:///./src/reducers/scripts.js?");
+
+/***/ }),
+
+/***/ "./src/reducers/workspace.js":
+/*!***********************************!*\
+  !*** ./src/reducers/workspace.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nvar initialState = {\n  editors: []\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case \"NEW_EDITOR\":\n      {\n        var _action$payload = action.payload,\n            type = _action$payload.type,\n            fileName = _action$payload.fileName;\n        return _objectSpread({}, state, {\n          editors: [].concat(_toConsumableArray(state.editors), [{\n            type: type,\n            fileName: fileName\n          }])\n        });\n      }\n  }\n\n  return state;\n});\n\n//# sourceURL=webpack:///./src/reducers/workspace.js?");
 
 /***/ }),
 

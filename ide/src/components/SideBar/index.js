@@ -1,13 +1,20 @@
 import React from "react";
 
-export default ({ scripts }) => (
+import "./styles.css"
+
+export default ({ scripts, onSelectResource }) => (
   <div>
-    <ul className="side-bar-item-list">
-      {
-        scripts.map(({ fileName }) => (
-          <li key={`Script-${fileName}`}>{ fileName }</li>
-        ))
-      }
-    </ul>
+    <div>
+      <h2> Scripts </h2>
+      <ul className="side-bar-item-list">
+        {
+          scripts.map(script => (
+            <li key={`Script-${script.fileName}`} onClick={() => onSelectResource("SCRIPT", script)}>
+              { script.fileName }
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 )
