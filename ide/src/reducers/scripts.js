@@ -1,9 +1,9 @@
 const initialState = {
-  scripts: []
+  files: []
 }
 
 export default (state = initialState, action) => {
-  switch(state.type) {
+  switch(action.type) {
     case "READ_SCRIPT": {
       const script = {
         fileName: action.payload.fileName,
@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
         modified: false
       };
 
-      return { ...state, scripts: [ ...state.scripts, script ] }
+      return { ...state, files: [ ...state.files, script ] }
     }
   }
   return state;

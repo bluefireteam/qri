@@ -8,6 +8,9 @@ import reducers from "./reducers";
 
 import IDE from "./containers/IDE";
 
+import "./main.css";
+import "./theme.css";
+
 const store = createStore(
   combineReducers(reducers),
   applyMiddleware(thunk),
