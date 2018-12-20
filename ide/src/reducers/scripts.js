@@ -17,7 +17,6 @@ export default (state = initialState, action) => {
     case "READ_SCRIPT_CONTENT": {
       const { scriptName, fileContent } = action.payload;
 
-      console.log(action)
       return {
         ...state,
         files: state.files.map(file => {

@@ -1,0 +1,29 @@
+.tab-bar-container {
+  height: 50px;
+  width: 100%;
+}
+
+.tab-bar-container ul {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0px;
+  height: 50px;
+  padding-top: 15px;
+}
+
+.tab-bar-container ul li {
+  display: inline-block;
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.tab-bar-container ul li .tab-name-label {
+  margin: 5px;
+}
+
+.tab-bar-container ul li .close-tab {
+  margin: 5px;
+}

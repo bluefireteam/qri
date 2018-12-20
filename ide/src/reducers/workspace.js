@@ -7,6 +7,24 @@ const findByFileName = fileName => editor => editor.fileName === fileName;
 
 export default (state = initialState, action) => {
   switch(action.type) {
+    case "CLOSE_EDITOR": {
+      const { fileName } = action.payload;
+
+      // TODO check if tab has modifications (maybe not here?)
+      const newState = {
+        ...state,
+        editors: state.editors.filter(editor => editor.fileName !== fileName)
+      }
+
+      // Check if there is one editor open
+      const isOpen = newState.editors.find(findByFileName(fileName));
+
+      if (!isOpen && newState.editors.length) {
+        newState.editors[0].selected = true;
+      }
+
+      return newState;
+    }
     case "OPEN_EDITOR": {
       const { type, fileName } = action.payload;
 

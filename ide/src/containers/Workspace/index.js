@@ -33,6 +33,15 @@ const mapDispatchToProps = dispatch => ({
         type: tab.type,
       },
     })
+  },
+  onTabClose: tab => {
+    dispatch({
+      type: "CLOSE_EDITOR",
+      payload: {
+        fileName: tab.fileName,
+        type: tab.type,
+      },
+    })
   }
 })
 

@@ -4,7 +4,7 @@ import "./styles.css";
 
 export default ({
   tabs,
-  selected,
+  selectedEditor,
   onSelect,
   onClose,
 }) => (
@@ -14,10 +14,10 @@ export default ({
         tabs.map(tab => (
           <li
             key={`Tab-${tab.fileName}`}
-            className={tab.fileName === selected ? "selected" : ""}
-            onClick={() => onSelect(tab)}
+            className={tab.fileName === selectedEditor ? "selected" : ""}
           >
-            { tab.fileName }
+            <span onClick={() => onSelect(tab)} className="tab-name-label">{ tab.fileName }</span>
+            <span onClick={() => onClose(tab)} className="close-tab">X</span>
           </li>
         ))
       }
