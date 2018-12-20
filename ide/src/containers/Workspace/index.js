@@ -25,6 +25,15 @@ const mapStateToProps = ({ workspace: { editors }, scripts, sprites }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  onTabSelect: tab => {
+    dispatch({
+      type: "OPEN_EDITOR",
+      payload: {
+        fileName: tab.fileName,
+        type: tab.type,
+      },
+    })
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Workspace);

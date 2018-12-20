@@ -5,15 +5,16 @@ import TabBar from "../TabBar";
 
 import "./styles.css";
 
-export default ({ editors, selectedEditor }) => (
+export default ({ editors, selectedEditor, onTabSelect }) => (
   <div className="full-size">
     {
       editors.length
         ? (
           <div>
             <TabBar
-              tabs={editors.map(e => e.fileName)}
+              tabs={editors}
               selectedEditor={selectedEditor.fileName} 
+              onSelect={onTabSelect}
             />
             <ScriptEditor
               fileName={selectedEditor.fileName}

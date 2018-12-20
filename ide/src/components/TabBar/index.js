@@ -12,7 +12,13 @@ export default ({
     <ul>
       {
         tabs.map(tab => (
-          <li className={tab === selected ? "selected" : ""} key={`Tab-${tab}`}>{ tab }</li>
+          <li
+            key={`Tab-${tab.fileName}`}
+            className={tab.fileName === selected ? "selected" : ""}
+            onClick={() => onSelect(tab)}
+          >
+            { tab.fileName }
+          </li>
         ))
       }
     </ul>

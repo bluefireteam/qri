@@ -10,7 +10,7 @@ const mapDispatchToProps = dispatch => ({
     if (type === "SCRIPT") {
       dispatch(readScript(resource.fileName)).then(() => {
         dispatch({
-          type: "NEW_EDITOR",
+          type: "OPEN_EDITOR",
           payload: {
             fileName: resource.fileName,
             type: "SCRIPT",
