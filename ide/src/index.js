@@ -8,6 +8,7 @@ import reducers from "./reducers";
 
 import IDE from "./containers/IDE";
 
+import "./icons";
 import "./main.css";
 import "./theme.css";
 

@@ -1,4 +1,5 @@
 import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import "./styles.css";
 
@@ -17,7 +18,9 @@ export default ({
             className={tab.fileName === selectedEditor ? "selected" : ""}
           >
             <span onClick={() => onSelect(tab)} className="tab-name-label">{ tab.fileName }</span>
-            <span onClick={() => onClose(tab)} className="close-tab">X</span>
+            <span onClick={() => onClose(tab)} className="close-tab">
+              <FontAwesomeIcon icon="times" />
+            </span>
           </li>
         ))
       }
