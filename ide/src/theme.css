@@ -1,4 +1,4 @@
-* {
+body {
   font-family: verdana;
   color: #fff;
 }
@@ -34,4 +34,8 @@ body {
 
 .tab-bar-container ul li .close-tab {
   color: #999;
+}
+
+.tab-bar-container ul li.selected .close-tab {
+  color: #333;
 }
