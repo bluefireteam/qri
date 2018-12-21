@@ -4,6 +4,7 @@ import WelcomePanel from "../WelcomPanel";
 import MessageBoard from "../MessageBoard";
 import SideBar from "../SideBar";
 import Workspace from "../Workspace";
+import Toolbar from "../Toolbar";
 
 const mapStateToProps = ({ project: { name, projectPath } }) => ({
   name,
@@ -12,8 +13,8 @@ const mapStateToProps = ({ project: { name, projectPath } }) => ({
 
 const IDEPanel = ({ }) => (
   <div className="editor full-size">
-    <div className="toolbar panel">
-      toolbar
+    <div className="toolbar-container">
+      <Toolbar />
     </div>
     <div className="main-panel">
       <div className="side-panel panel">

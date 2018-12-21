@@ -1,0 +1,9 @@
+.toolbar {
+  height: 40px;
+}
+
+.toolbar .system-icon {
+  margin-left: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+}

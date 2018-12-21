@@ -237,6 +237,17 @@ eval("module.exports.id = 'ace/mode/javascript_worker';\nmodule.exports.src = \"
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/Icons/styles.css":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Icons/styles.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".system-icon {\\n  font-size: 26px;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/Icons/styles.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/components/MessageBoard/styles.css":
 /*!**************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/MessageBoard/styles.css ***!
@@ -281,6 +292,17 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/c
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/Toolbar/styles.css":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Toolbar/styles.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".toolbar {\\n  height: 40px;\\n}\\n\\n.toolbar .system-icon {\\n  margin-left: 15px;\\n  margin-top: 5px;\\n  cursor: pointer;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/Toolbar/styles.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/components/Workspace/styles.css":
 /*!***********************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Workspace/styles.css ***!
@@ -299,7 +321,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/c
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body, html, .full-size, #app {\\n  height: 100%;\\n  width: 100%;\\n  padding: 0;\\n  margin: 0;\\n\\n  display: flex;\\n  flex: 1;\\n  justify-content: center;\\n  align-items: center;\\n}\\n\\n.editor {\\n  display: flex;\\n  flex-direction: column;\\n}\\n\\n.toolbar {\\n  height: 50px;\\n  width: 100%;\\n}\\n\\n.main-panel {\\n  display: flex;\\n  flex: 1;\\n  width: 100%;\\n}\\n\\n.main-panel .side-panel {\\n  width: 300px;\\n}\\n\\n.main-panel .editor-panel {\\n  flex: 1;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body, html, .full-size, #app {\\n  height: 100%;\\n  width: 100%;\\n  padding: 0;\\n  margin: 0;\\n\\n  display: flex;\\n  flex: 1;\\n  justify-content: center;\\n  align-items: center;\\n}\\n\\n.editor {\\n  display: flex;\\n  flex-direction: column;\\n}\\n\\n.toolbar-container {\\n  height: 50px;\\n  width: 100%;\\n}\\n\\n.main-panel {\\n  display: flex;\\n  flex: 1;\\n  width: 100%;\\n}\\n\\n.main-panel .side-panel {\\n  width: 300px;\\n}\\n\\n.main-panel .editor-panel {\\n  flex: 1;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -310,7 +332,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loa
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  font-family: verdana;\\n  color: #fff;\\n}\\n\\nbody {\\n  background-color: #000;\\n}\\n\\n.panel {\\n  border: 1px solid #e5e5e5;\\n  background-color: #222;\\n  margin: 5px;\\n}\\n\\n.tab-bar-container {\\n  border-bottom: 1px solid #e5e5e5;\\n}\\n\\n.tab-bar-container ul li {\\n  margin-left: 10px;\\n  border-top: 1px solid #e5e5e5;\\n  border-right: 1px solid #e5e5e5;\\n  border-left: 1px solid #e5e5e5;\\n}\\n\\n.tab-bar-container ul li.selected {\\n  background-color: #e5e5e5;\\n}\\n\\n.tab-bar-container ul li.selected .tab-name-label {\\n  color: #000;\\n}\\n\\n.tab-bar-container ul li .close-tab {\\n  color: #999;\\n}\\n\\n.tab-bar-container ul li.selected .close-tab {\\n  color: #333;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/theme.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  font-family: verdana;\\n  color: #fff;\\n}\\n\\nbody {\\n  background-color: #000;\\n}\\n\\n.panel {\\n  border: 1px solid #e5e5e5;\\n  background-color: #222;\\n  margin: 5px;\\n}\\n\\n.tab-bar-container {\\n  border-bottom: 1px solid #e5e5e5;\\n}\\n\\n.tab-bar-container ul li {\\n  margin-left: 10px;\\n  border-top: 1px solid #e5e5e5;\\n  border-right: 1px solid #e5e5e5;\\n  border-left: 1px solid #e5e5e5;\\n}\\n\\n.tab-bar-container ul li.selected {\\n  background-color: #e5e5e5;\\n}\\n\\n.tab-bar-container ul li.selected .tab-name-label {\\n  color: #000;\\n}\\n\\n.tab-bar-container ul li .close-tab {\\n  color: #999;\\n}\\n\\n.tab-bar-container ul li.selected .close-tab {\\n  color: #333;\\n}\\n\\n.system-icon.disabled {\\n  color: #333;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/theme.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -940,6 +962,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/components/Icons/index.js":
+/*!***************************************!*\
+  !*** ./src/components/Icons/index.js ***!
+  \***************************************/
+/*! exports provided: FileIcon, FolderIcon, SaveIcon */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"FileIcon\", function() { return FileIcon; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"FolderIcon\", function() { return FolderIcon; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"SaveIcon\", function() { return SaveIcon; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ \"./node_modules/@fortawesome/react-fontawesome/index.es.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ \"./src/components/Icons/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);\nfunction _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\n\n\n\n\nvar IconBase = function IconBase(_ref) {\n  var icon = _ref.icon,\n      _ref$active = _ref.active,\n      active = _ref$active === void 0 ? true : _ref$active;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"span\", {\n    className: \"system-icon \".concat(!active ? \"disabled\" : \"\")\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__[\"FontAwesomeIcon\"], {\n    icon: icon\n  }));\n};\n\nvar FileIcon = function FileIcon(_ref2) {\n  var props = _extends({}, _ref2);\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IconBase, _extends({}, props, {\n    icon: \"file\"\n  }));\n};\nvar FolderIcon = function FolderIcon(_ref3) {\n  var props = _extends({}, _ref3);\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IconBase, _extends({}, props, {\n    icon: \"folder\"\n  }));\n};\nvar SaveIcon = function SaveIcon(_ref4) {\n  var props = _extends({}, _ref4);\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IconBase, _extends({}, props, {\n    icon: \"save\"\n  }));\n};\n\n//# sourceURL=webpack:///./src/components/Icons/index.js?");
+
+/***/ }),
+
+/***/ "./src/components/Icons/styles.css":
+/*!*****************************************!*\
+  !*** ./src/components/Icons/styles.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/components/Icons/styles.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/components/Icons/styles.css?");
+
+/***/ }),
+
 /***/ "./src/components/MessageBoard/index.js":
 /*!**********************************************!*\
   !*** ./src/components/MessageBoard/index.js ***!
@@ -1032,6 +1077,29 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 
 /***/ }),
 
+/***/ "./src/components/Toolbar/index.js":
+/*!*****************************************!*\
+  !*** ./src/components/Toolbar/index.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Icons */ \"./src/components/Icons/index.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ \"./src/components/Toolbar/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var editorsLength = _ref.editorsLength,\n      selectedEditor = _ref.selectedEditor;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"toolbar panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icons__WEBPACK_IMPORTED_MODULE_1__[\"FileIcon\"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icons__WEBPACK_IMPORTED_MODULE_1__[\"FolderIcon\"], null), function () {\n    if (selectedEditor) {\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Icons__WEBPACK_IMPORTED_MODULE_1__[\"SaveIcon\"], null);\n    }\n  }());\n});\n\n//# sourceURL=webpack:///./src/components/Toolbar/index.js?");
+
+/***/ }),
+
+/***/ "./src/components/Toolbar/styles.css":
+/*!*******************************************!*\
+  !*** ./src/components/Toolbar/styles.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./styles.css */ \"./node_modules/css-loader/dist/cjs.js!./src/components/Toolbar/styles.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/components/Toolbar/styles.css?");
+
+/***/ }),
+
 /***/ "./src/components/WelcomePanel/index.js":
 /*!**********************************************!*\
   !*** ./src/components/WelcomePanel/index.js ***!
@@ -1075,7 +1143,7 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _WelcomPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../WelcomPanel */ \"./src/containers/WelcomPanel/index.js\");\n/* harmony import */ var _MessageBoard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../MessageBoard */ \"./src/containers/MessageBoard/index.js\");\n/* harmony import */ var _SideBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../SideBar */ \"./src/containers/SideBar/index.js\");\n/* harmony import */ var _Workspace__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Workspace */ \"./src/containers/Workspace/index.js\");\nfunction _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError(\"Cannot destructure undefined\"); }\n\n\n\n\n\n\n\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var _ref$project = _ref.project,\n      name = _ref$project.name,\n      projectPath = _ref$project.projectPath;\n  return {\n    name: name,\n    projectPath: projectPath\n  };\n};\n\nvar IDEPanel = function IDEPanel(_ref2) {\n  _objectDestructuringEmpty(_ref2);\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"editor full-size\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"toolbar panel\"\n  }, \"toolbar\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"main-panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"side-panel panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SideBar__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"editor-panel panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Workspace__WEBPACK_IMPORTED_MODULE_5__[\"default\"], null))));\n};\n\nvar IDE = function IDE(_ref3) {\n  var name = _ref3.name,\n      projectPath = _ref3.projectPath;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"full-size\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MessageBoard__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null), name ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IDEPanel, null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WelcomPanel__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(mapStateToProps)(IDE));\n\n//# sourceURL=webpack:///./src/containers/IDE/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _WelcomPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../WelcomPanel */ \"./src/containers/WelcomPanel/index.js\");\n/* harmony import */ var _MessageBoard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../MessageBoard */ \"./src/containers/MessageBoard/index.js\");\n/* harmony import */ var _SideBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../SideBar */ \"./src/containers/SideBar/index.js\");\n/* harmony import */ var _Workspace__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Workspace */ \"./src/containers/Workspace/index.js\");\n/* harmony import */ var _Toolbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Toolbar */ \"./src/containers/Toolbar/index.js\");\nfunction _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError(\"Cannot destructure undefined\"); }\n\n\n\n\n\n\n\n\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var _ref$project = _ref.project,\n      name = _ref$project.name,\n      projectPath = _ref$project.projectPath;\n  return {\n    name: name,\n    projectPath: projectPath\n  };\n};\n\nvar IDEPanel = function IDEPanel(_ref2) {\n  _objectDestructuringEmpty(_ref2);\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"editor full-size\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"toolbar-container\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toolbar__WEBPACK_IMPORTED_MODULE_6__[\"default\"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"main-panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"side-panel panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SideBar__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"editor-panel panel\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Workspace__WEBPACK_IMPORTED_MODULE_5__[\"default\"], null))));\n};\n\nvar IDE = function IDE(_ref3) {\n  var name = _ref3.name,\n      projectPath = _ref3.projectPath;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"full-size\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MessageBoard__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null), name ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IDEPanel, null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_WelcomPanel__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(mapStateToProps)(IDE));\n\n//# sourceURL=webpack:///./src/containers/IDE/index.js?");
 
 /***/ }),
 
@@ -1100,6 +1168,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _components_SideBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/SideBar */ \"./src/components/SideBar/index.js\");\n/* harmony import */ var _actions_fs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/fs */ \"./src/actions/fs.js\");\n\n\n\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var files = _ref.scripts.files;\n  return {\n    scripts: files\n  };\n};\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {\n    onSelectResource: function onSelectResource(type, resource) {\n      if (type === \"SCRIPT\") {\n        dispatch(Object(_actions_fs__WEBPACK_IMPORTED_MODULE_2__[\"readScript\"])(resource.fileName)).then(function () {\n          dispatch({\n            type: \"OPEN_EDITOR\",\n            payload: {\n              fileName: resource.fileName,\n              type: \"SCRIPT\"\n            }\n          });\n        });\n      }\n    }\n  };\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__[\"connect\"])(mapStateToProps, mapDispatchToProps)(_components_SideBar__WEBPACK_IMPORTED_MODULE_1__[\"default\"]));\n\n//# sourceURL=webpack:///./src/containers/SideBar/index.js?");
+
+/***/ }),
+
+/***/ "./src/containers/Toolbar/index.js":
+/*!*****************************************!*\
+  !*** ./src/containers/Toolbar/index.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _components_Toolbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Toolbar */ \"./src/components/Toolbar/index.js\");\n\n\n\nvar mapStateToProps = function mapStateToProps(_ref) {\n  var editors = _ref.workspace.editors;\n  return {\n    editorsLength: editors.length,\n    selectedEditor: editors.find(function (e) {\n      return e.selected;\n    })\n  };\n};\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {};\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__[\"connect\"])(mapStateToProps, mapDispatchToProps)(_components_Toolbar__WEBPACK_IMPORTED_MODULE_1__[\"default\"]));\n\n//# sourceURL=webpack:///./src/containers/Toolbar/index.js?");
 
 /***/ }),
 
@@ -1135,7 +1215,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ \"./node_modules/@fortawesome/fontawesome-svg-core/index.es.js\");\n/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ \"./node_modules/@fortawesome/react-fontawesome/index.es.js\");\n/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ \"./node_modules/@fortawesome/free-solid-svg-icons/index.es.js\");\n/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ \"./node_modules/@fortawesome/free-brands-svg-icons/index.es.js\");\n\n\n\n\n_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_0__[\"library\"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__[\"faTimes\"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_3__[\"fab\"]);\n\n//# sourceURL=webpack:///./src/icons.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ \"./node_modules/@fortawesome/fontawesome-svg-core/index.es.js\");\n/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ \"./node_modules/@fortawesome/react-fontawesome/index.es.js\");\n/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ \"./node_modules/@fortawesome/free-solid-svg-icons/index.es.js\");\n/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ \"./node_modules/@fortawesome/free-brands-svg-icons/index.es.js\");\n\n\n\n\n_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_0__[\"library\"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__[\"faTimes\"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__[\"faSave\"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__[\"faFile\"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__[\"faFolder\"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_3__[\"fab\"]);\n\n//# sourceURL=webpack:///./src/icons.js?");
 
 /***/ }),
 

@@ -15,7 +15,7 @@ body, html, .full-size, #app {
   flex-direction: column;
 }
 
-.toolbar {
+.toolbar-container {
   height: 50px;
   width: 100%;
 }

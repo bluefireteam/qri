@@ -39,3 +39,7 @@ body {
 .tab-bar-container ul li.selected .close-tab {
   color: #333;
 }
+
+.system-icon.disabled {
+  color: #333;
+}
