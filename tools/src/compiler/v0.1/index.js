@@ -1,24 +1,35 @@
 const fs = require("fs");
 const path = require("path");
-const UglifyJS = require("uglify-js");
 
-module.exports = (source, dest) => {
+const toGameData = source => {
   const sourceFilePath = path.join(source, "sources");
 
   const sourceFiles = fs.readdirSync(sourceFilePath)
 
-  const sources = sourceFiles.reduce((obj, file) => ({
-    [file]: fs.readFileSync(path.join(sourceFilePath, file), "utf8")
-  }), {})
+  const sources = sourceFiles.reduce((obj, file) => 
+    obj + "\n" +  fs.readFileSync(path.join(sourceFilePath, file), "utf8")
+  , "")
 
-  const compiled = UglifyJS.minify(sources)
-  if (compiled.error) {
-    console.error(compiled.error);
-    process.exit(1);
-  } else {
-    const gameData = compiled.code;
-    fs.writeFileSync(path.join(dest, "game.js"), gameData, "utf8")
+  //const sources = sourceFiles.reduce((obj, file) => ({
+  //  [file]: fs.readFileSync(path.join(sourceFilePath, file), "utf8")
+  //}), {})
 
-    console.log("Game compiled")
-  }
+  // TODO Uglify does not support been bundled with webpack, we need to find an alternative :(
+  const compiled = sources//UglifyJS.minify(sources)
+  //if (compiled.error) {
+  //  throw compiled.error;
+  //}
+
+  //return compiled.code;
+  return sources;
+}
+
+const toFile = (source, dest) => {
+  const gameData = toGameData(source);
+  fs.writeFileSync(path.join(dest, "game.js"), gameData, "utf8")
+}
+
+module.exports = {
+  toGameData,
+  toFile,
 }

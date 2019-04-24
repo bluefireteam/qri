@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { runGame } from "../../actions/game";
 import Toolbar from "../../components/Toolbar";
 
 const mapStateToProps = ({
@@ -9,6 +10,9 @@ const mapStateToProps = ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  onRun: () => {
+    dispatch(runGame())
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Toolbar);

@@ -1,4 +1,9 @@
 module.exports = {
+  target: "electron-main",
+  entry: {
+    main: ["./src/index.js"],
+    emulator: ["./src/emulator.js"],
+  },
   module: {
     rules: [
       {
@@ -13,7 +18,7 @@ module.exports = {
           { loader: "style-loader" },
           { loader: "css-loader" }
         ]
-      }, 
+      },
     ],
   },
 };

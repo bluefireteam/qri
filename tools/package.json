@@ -5,6 +5,5 @@
   "main": "index.js",
   "scripts": {},
   "dependencies": {
-    "uglify-js": "^3.4.9"
   }
 }
