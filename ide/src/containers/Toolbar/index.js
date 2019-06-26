@@ -16,6 +16,9 @@ const mapDispatchToProps = dispatch => ({
   },
   onSave: () => {
     dispatch(saveFile());
+  },
+  onCreate: scriptName => {
+    console.log(scriptName);
   }
 })
 
