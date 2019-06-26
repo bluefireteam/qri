@@ -22,6 +22,35 @@ const Console = {
     const scaleFactor = width / 160;
     const engine = Engine(scaleFactor, canvas)
     engine.loadGame(gameData);
-    //controls.init(engine.ondPadDown, engine.ondPadUp);
+
+    document.addEventListener("keydown", evt => {
+      if (evt.key == "w" || evt.key == "ArrowUp") {
+        dpadDown("UP");
+      }
+      if (evt.key == "s" || evt.key == "ArrowDown") {
+        dpadDown("DOWN");
+      }
+      if (evt.key == "a" || evt.key == "ArrowLeft") {
+        dpadDown("LEFT");
+      }
+      if (evt.key == "d" || evt.key == "ArrowRight") {
+        dpadDown("RIGHT");
+      }
+    });
+
+    document.addEventListener("keyup", evt => {
+      if (evt.key == "w" || evt.key == "ArrowUp") {
+        dpadUp("UP");
+      }
+      if (evt.key == "s" || evt.key == "ArrowDown") {
+        dpadUp("DOWN");
+      }
+      if (evt.key == "a" || evt.key == "ArrowLeft") {
+        dpadUp("LEFT");
+      }
+      if (evt.key == "d" || evt.key == "ArrowRight") {
+        dpadUp("RIGHT");
+      }
+    });
   }
 }
