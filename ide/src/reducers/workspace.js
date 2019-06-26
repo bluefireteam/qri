@@ -7,8 +7,9 @@ const findByFileName = fileName => editor => editor.fileName === fileName;
 
 export default (state = initialState, action) => {
   switch(action.type) {
+    case "SCRIPT_SAVED":
     case "SCRIPT_CHANGE": {
-      const { fileName, content } = action.payload;
+      const { fileName } = action.payload;
 
       return {
         ...state,
@@ -16,7 +17,7 @@ export default (state = initialState, action) => {
           if (editor.type === "SCRIPT" && editor.fileName === fileName) {
             return {
               ...editor,
-              modified: true
+              modified: action.type === 'SCRIPT_CHANGE'
             }
           }
 

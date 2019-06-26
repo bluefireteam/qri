@@ -16,13 +16,25 @@ export const readScript = scriptName => (dispatch, getState) => new Promise((res
 })
 
 export const saveFile = () => (dispatch, getState) => {
-  const { workspace, scripts } = getState();
+  const { workspace, scripts, project: { projectPath } } = getState();
 
   const selectedEditor = workspace.editors.find(({ selected }) => selected);
 
   if (selectedEditor.type === "SCRIPT") {
     const script = scripts.files.find(s => s.fileName === selectedEditor.fileName);
-    console.log(script.content);
+
+    const scriptPath = path.join(projectPath, "sources", script.fileName);
+    fs.writeFileSync(scriptPath, script.content, "utf8");
+
+    dispatch({
+      type: "SHOW_INFO_MESSAGE",
+      payload: { info: `Script "${script.fileName}" saved.` }
+    });
+
+    dispatch({
+      type: "SCRIPT_SAVED",
+      payload: { fileName: script.fileName }
+    })
   }
 }
 

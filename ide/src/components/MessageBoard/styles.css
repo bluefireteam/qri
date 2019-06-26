@@ -9,6 +9,15 @@
   list-style: none;
 }
 
+.message-board ul li {
+  padding: 10px;
+  text-align: center;
+}
+
 .message-board ul li.error {
-  background-color: red;
+  background-color: #992e03;
+}
+
+.message-board ul li.info {
+  background-color: #5f95ed;
 }
