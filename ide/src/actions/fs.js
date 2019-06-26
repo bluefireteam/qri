@@ -15,6 +15,17 @@ export const readScript = scriptName => (dispatch, getState) => new Promise((res
   resolve();
 })
 
+export const saveFile = () => (dispatch, getState) => {
+  const { workspace, scripts } = getState();
+
+  const selectedEditor = workspace.editors.find(({ selected }) => selected);
+
+  if (selectedEditor.type === "SCRIPT") {
+    const script = scripts.files.find(s => s.fileName === selectedEditor.fileName);
+    console.log(script.content);
+  }
+}
+
 export const readProject = projectFilePath => dispatch => {
   const projectPath = path.dirname(projectFilePath);
   const projectFile = JSON.parse(fs.readFileSync(projectFilePath, "utf8"));

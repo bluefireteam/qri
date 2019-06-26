@@ -7,6 +7,23 @@ const findByFileName = fileName => editor => editor.fileName === fileName;
 
 export default (state = initialState, action) => {
   switch(action.type) {
+    case "SCRIPT_CHANGE": {
+      const { fileName, content } = action.payload;
+
+      return {
+        ...state,
+        editors: state.editors.map(editor => {
+          if (editor.type === "SCRIPT" && editor.fileName === fileName) {
+            return {
+              ...editor,
+              modified: true
+            }
+          }
+
+          return editor;
+        })
+      }
+    }
     case "CLOSE_EDITOR": {
       const { fileName } = action.payload;
 
@@ -47,7 +64,7 @@ export default (state = initialState, action) => {
         ...state,
         editors: [
           ...state.editors.map(unSelectEditor),
-          { type, fileName, selected: true }
+          { type, fileName, selected: true, modified: false }
         ]
       }
     }

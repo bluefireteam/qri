@@ -7,6 +7,7 @@ export default ({
   editorsLength,
   selectedEditor,
 
+  onSave,
   onRun
 }) => (
   <div className="toolbar panel">
@@ -15,7 +16,7 @@ export default ({
     <RunIcon onClick={onRun} />
     {(() => {
       if (selectedEditor) {
-        return <SaveIcon />
+        return <SaveIcon onClick={onSave} />
       }
     })() }
   </div>

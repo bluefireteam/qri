@@ -7,7 +7,7 @@ import "brace/theme/monokai";
 
 import "./styles.css";
 
-export default ({ fileName, value }) => (
+export default ({ fileName, value, onChange }) => (
   <div className="script-editor-container full-size">
     <AceEditor
       mode="javascript"
@@ -15,9 +15,7 @@ export default ({ fileName, value }) => (
       value={value}
       width="100%"
       height="100%"
-      onChange={value => {
-        console.log(value)
-	  	}}
+      onChange={onChange}
       name={`AceEditor-${fileName}`}
       editorProps={{}}
     />

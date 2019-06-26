@@ -17,7 +17,10 @@ export default ({
             key={`Tab-${tab.fileName}`}
             className={tab.fileName === selectedEditor ? "selected" : ""}
           >
-            <span onClick={() => onSelect(tab)} className="tab-name-label">{ tab.fileName }</span>
+            <span onClick={() => onSelect(tab)} className="tab-name-label">
+              { tab.fileName }
+              { tab.modified && <span> * </span> }
+            </span>
             <span onClick={() => onClose(tab)} className="close-tab">
               <FontAwesomeIcon icon="times" />
             </span>

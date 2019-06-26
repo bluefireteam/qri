@@ -42,6 +42,15 @@ const mapDispatchToProps = dispatch => ({
         type: tab.type,
       },
     })
+  },
+  onScriptChange: (selectedEditor, value) => {
+    dispatch({
+      type: "SCRIPT_CHANGE",
+      payload: {
+        fileName: selectedEditor.fileName,
+        content: value,
+      }
+    });
   }
 })
 

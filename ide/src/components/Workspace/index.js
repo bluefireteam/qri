@@ -5,7 +5,7 @@ import TabBar from "../TabBar";
 
 import "./styles.css";
 
-export default ({ editors, selectedEditor, onTabSelect, onTabClose }) => (
+export default ({ editors, selectedEditor, onTabSelect, onTabClose, onScriptChange }) => (
   <div className="full-size">
     {
       editors.length
@@ -20,6 +20,7 @@ export default ({ editors, selectedEditor, onTabSelect, onTabClose }) => (
             <ScriptEditor
               fileName={selectedEditor.fileName}
               value={selectedEditor.content}
+              onChange={value => onScriptChange(selectedEditor, value)}
             />
           </div>
         )

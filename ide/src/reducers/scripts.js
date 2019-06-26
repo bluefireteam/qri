@@ -8,7 +8,6 @@ export default (state = initialState, action) => {
       const script = {
         fileName: action.payload.fileName,
         loaded: false,
-        modified: false,
         content: null,
       };
 
@@ -25,6 +24,23 @@ export default (state = initialState, action) => {
               ...file,
               loaded: true,
               content: fileContent,
+            }
+          }
+
+          return file;
+        })
+      }
+    }
+    case "SCRIPT_CHANGE": {
+      const { fileName, content } = action.payload;
+
+      return {
+        ...state,
+        files: state.files.map(file => {
+          if (file.fileName === fileName) {
+            return {
+              ...file,
+              content: content,
             }
           }
 
