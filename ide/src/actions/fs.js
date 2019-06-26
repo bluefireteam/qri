@@ -1,3 +1,5 @@
+import { showInfoMessage } from "./messages";
+
 const fs = window.require("fs");
 const path = window.require("path");
 
@@ -26,10 +28,7 @@ export const saveFile = () => (dispatch, getState) => {
     const scriptPath = path.join(projectPath, "sources", script.fileName);
     fs.writeFileSync(scriptPath, script.content, "utf8");
 
-    dispatch({
-      type: "SHOW_INFO_MESSAGE",
-      payload: { info: `Script "${script.fileName}" saved.` }
-    });
+    dispatch(showInfoMessage(`Script "${script.fileName}" saved.`));
 
     dispatch({
       type: "SCRIPT_SAVED",
