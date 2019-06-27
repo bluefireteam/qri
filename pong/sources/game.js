@@ -1,4 +1,4 @@
-var x1 = 5,
+let x1 = 5,
   x2 = 150,
   y1 = 60,
   y2 = 60,
@@ -17,14 +17,7 @@ function speed(pixelPerSeconds, delta) {
 }
 
 function load() {
-}
-
-function dpadDown(key) {
-  if (key === "UP" || key === "DOWN")  move = key
-}
-
-function dpadUp(key) {
-  if (key === "UP" || key === "DOWN")  move = null
+    
 }
 
 function update(d) {
@@ -38,8 +31,6 @@ function update(d) {
     if (y1 + h >= 160) y1 = y2 = 160 - h;
   }
 
-
-
   bx += speed(50, d) * dx
   by += speed(50, d) * dy
 
@@ -47,8 +38,3 @@ function update(d) {
   if (by < 0 || by + bh > 160) dy = dy * -1;
 }
 
-function render(g) {
-  g.fill(x1, y1, w, h, 7)
-  g.fill(x2, y2, w, h, 7)
-  g.fill(bx, by, bw, bh, 2)
-}
