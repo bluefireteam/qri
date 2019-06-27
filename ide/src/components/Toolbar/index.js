@@ -18,6 +18,7 @@ export default class Toolbar extends React.Component {
       editorsLength, selectedEditor,
 
       onSave,
+      onSaveAll,
       onRun,
       onCreate
     }  = this.props;
@@ -36,7 +37,17 @@ export default class Toolbar extends React.Component {
           if (selectedEditor) {
             return <SaveIcon onClick={onSave} />
           }
-        })() }
+        })()}
+        {(() => {
+          if (editorsLength > 1) {
+            return (
+              <span className="save-all" onClick={onSaveAll}>
+                <SaveIcon />
+                <SaveIcon />
+              </span>
+            )
+          }
+        })()}
         {
           this.state.newFileDialogOpen && (
             <DialogBox>

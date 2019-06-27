@@ -7,3 +7,17 @@
   margin-top: 5px;
   cursor: pointer;
 }
+
+.toolbar .save-all {
+  position: relative;
+}
+
+.toolbar .save-all span:nth-child(1) {
+  color: #ccc;
+}
+
+.toolbar .save-all span:nth-child(2) {
+  color: #fff;
+  position: absolute;
+  right: 5px;
+}

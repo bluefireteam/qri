@@ -54,28 +54,42 @@ export const readScript = scriptName => (dispatch, getState) => new Promise((res
   });
 })
 
-export const saveFile = () => (dispatch, getState) => {
+export const saveAllFiles = () => (dispatch, getState) => {
+  const { workspace, scripts, project: { projectPath } } = getState();
+
+  workspace.editors.forEach(editor => {
+    dispatch(saveFile(editor.fileName));
+  })
+}
+
+export const saveSelectedFile = () => (dispatch, getState) => {
   const { workspace, scripts, project: { projectPath } } = getState();
 
   const selectedEditor = workspace.editors.find(({ selected }) => selected);
 
   if (selectedEditor.type === "SCRIPT") {
-    const script = scripts.files.find(s => s.fileName === selectedEditor.fileName);
-
-    const scriptPath = path.join(projectPath, "sources", script.fileName);
-    fs.writeFile(scriptPath, script.content, "utf8", err => {
-      if (err) {
-        dispatch(showErrorMessage(`Error saving script "${script.fileName}"`));
-      } else {
-        dispatch(showInfoMessage(`Script "${script.fileName}" saved.`));
-
-        dispatch({
-          type: "SCRIPT_SAVED",
-          payload: { fileName: script.fileName }
-        })
-      }
-    });
+    dispatch(saveFile(selectedEditor.fileName));
   }
+}
+
+export const saveFile = fileName => (dispatch, getState) => {
+  const { workspace, scripts, project: { projectPath } } = getState();
+
+  const script = scripts.files.find(s => s.fileName === fileName);
+
+  const scriptPath = path.join(projectPath, "sources", script.fileName);
+  fs.writeFile(scriptPath, script.content, "utf8", err => {
+    if (err) {
+      dispatch(showErrorMessage(`Error saving script "${script.fileName}"`));
+    } else {
+      dispatch(showInfoMessage(`Script "${script.fileName}" saved.`));
+
+      dispatch({
+        type: "SCRIPT_SAVED",
+        payload: { fileName: script.fileName }
+      })
+    }
+  });
 }
 
 export const readProject = projectFilePath => dispatch => {

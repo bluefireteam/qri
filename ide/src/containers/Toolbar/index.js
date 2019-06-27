@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { runGame } from "../../actions/game";
-import { saveFile, createScript } from "../../actions/fs";
+import { saveSelectedFile, saveAllFiles, createScript } from "../../actions/fs";
 import Toolbar from "../../components/Toolbar";
 
 const mapStateToProps = ({
@@ -15,7 +15,10 @@ const mapDispatchToProps = dispatch => ({
     dispatch(runGame())
   },
   onSave: () => {
-    dispatch(saveFile());
+    dispatch(saveSelectedFile());
+  },
+  onSaveAll: () => {
+    dispatch(saveAllFiles());
   },
   onCreate: scriptName => {
     dispatch(createScript(scriptName));
