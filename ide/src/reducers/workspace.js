@@ -7,6 +7,22 @@ const findByFileName = fileName => editor => editor.fileName === fileName;
 
 export default (state = initialState, action) => {
   switch(action.type) {
+    case "SCRIPT_DELETED": {
+      const { fileName } = action.payload;
+
+      // We need to check if the script deleted, if the one opened
+      const selectedEditor = state.editors.find(e => e.fileName === fileName);
+
+      return {
+        ...state,
+        editors: state.editors
+          .filter(e => e.fileName !== fileName)
+          .map((e, idx) => ({
+            ...e,
+            selected: (selectedEditor.fileName === fileName && idx === 0) || e.selected
+          }))
+      }
+    }
     case "SCRIPT_SAVED":
     case "SCRIPT_CHANGE": {
       const { fileName } = action.payload;

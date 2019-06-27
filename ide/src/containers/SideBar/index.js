@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import SideBar from "../../components/SideBar";
 
-import { readScript } from "../../actions/fs";
+import { readScript, deleteScript } from "../../actions/fs";
 
 const mapStateToProps = ({ scripts: { files } }) => ({ scripts: files });
 
@@ -18,6 +18,9 @@ const mapDispatchToProps = dispatch => ({
         })
       });
     }
+  },
+  onDeleteScript: fileName => {
+    dispatch(deleteScript(fileName));
   }
 })
 

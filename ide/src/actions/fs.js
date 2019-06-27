@@ -3,6 +3,23 @@ import { showInfoMessage, showErrorMessage } from "./messages";
 const fs = window.require("fs");
 const path = window.require("path");
 
+export const deleteScript = scriptName => (dispatch, getState) => {
+  const { project: { projectPath } } = getState()
+  const scriptPath = path.join(projectPath, "sources", scriptName);
+
+  fs.unlink(scriptPath, err => {
+    if (err) {
+      dispatch(showErrorMessage(`Error deleting script "${scriptName}"`));
+    } else {
+      dispatch(showInfoMessage(`Script deleted "${scriptName}"`));
+      dispatch({
+        type: "SCRIPT_DELETED",
+        payload: { fileName: scriptName },
+      })
+    }
+  });
+}
+
 export const createScript = scriptName => (dispatch, getState) => {
   const { project: { projectPath } } = getState()
   const scriptPath = path.join(projectPath, "sources", scriptName);

@@ -7,6 +7,25 @@
   padding-left: 0px;
 }
 
+.side-bar-item-list li .item-name {
+  cursor: pointer;
+}
+
 .side-bar-item-list li {
+  padding: 2px;
+}
+
+.side-bar-item-list li:hover {
+  background-color: #111;
+}
+
+.side-bar-item-list li:hover .delete-item {
+  display: block;
+}
+
+.side-bar-item-list li .delete-item {
+  display: none;
+  float: right;
+  margin-right: 15px;
   cursor: pointer;
 }

@@ -4,6 +4,14 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch(action.type) {
+    case "SCRIPT_DELETED": {
+      const { fileName } = action.payload;
+
+      return {
+        ...state,
+        files: state.files.filter(s => s.fileName !== fileName)
+      }
+    }
     case "READ_SCRIPT": {
       const script = {
         fileName: action.payload.fileName,
