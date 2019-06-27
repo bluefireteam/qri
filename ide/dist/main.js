@@ -266,7 +266,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/c
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".message-board {\\n  position: fixed;\\n  width: 300px;\\n  right: 20px;\\n  top: 20px;\\n}\\n\\n.message-board ul {\\n  list-style: none;\\n}\\n\\n.message-board ul li {\\n  padding: 10px;\\n  text-align: center;\\n}\\n\\n.message-board ul li.error {\\n  background-color: #992e03;\\n}\\n\\n.message-board ul li.info {\\n  background-color: #5f95ed;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/MessageBoard/styles.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".message-board {\\n  position: fixed;\\n  width: 300px;\\n  right: 20px;\\n  top: 20px;\\n  z-index: 5;\\n}\\n\\n.message-board ul {\\n  list-style: none;\\n}\\n\\n.message-board ul li {\\n  padding: 10px;\\n  text-align: center;\\n}\\n\\n.message-board ul li.error {\\n  background-color: #992e03;\\n}\\n\\n.message-board ul li.info {\\n  background-color: #5f95ed;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/MessageBoard/styles.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
