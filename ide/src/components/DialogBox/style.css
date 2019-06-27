@@ -1,4 +1,6 @@
 .dialog-box-background {
+  z-index: 5;
+
   position: fixed;
   top: 0px;
   bottom: 0px;

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { runGame } from "../../actions/game";
-import { saveFile } from "../../actions/fs";
+import { saveFile, createScript } from "../../actions/fs";
 import Toolbar from "../../components/Toolbar";
 
 const mapStateToProps = ({
@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(saveFile());
   },
   onCreate: scriptName => {
-    console.log(scriptName);
+    dispatch(createScript(scriptName));
   }
 })
 

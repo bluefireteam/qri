@@ -1,20 +1,40 @@
-import { showInfoMessage } from "./messages";
+import { showInfoMessage, showErrorMessage } from "./messages";
 
 const fs = window.require("fs");
 const path = window.require("path");
+
+export const createScript = scriptName => (dispatch, getState) => {
+  const { project: { projectPath } } = getState()
+  const scriptPath = path.join(projectPath, "sources", scriptName);
+
+  fs.writeFile(scriptPath, "", "utf8", err => {
+    if (err) {
+      dispatch(showErrorMessage(`Error creating script "${scriptName}"`));
+    } else {
+      dispatch({
+        type: "READ_SCRIPT",
+        payload: { fileName: scriptName },
+      })
+    }
+  })
+}
 
 export const readScript = scriptName => (dispatch, getState) => new Promise((resolve, reject) => {
   const { project: { projectPath } } = getState()
 
   const scriptPath = path.join(projectPath, "sources", scriptName);
-  const fileContent = fs.readFileSync(scriptPath, "utf8");
-
-  dispatch({
-    type: "READ_SCRIPT_CONTENT",
-    payload: { scriptName, fileContent }
-  })
-
-  resolve();
+  const fileContent = fs.readFile(scriptPath, "utf8", (err, fileContent) => {
+    if (err) {
+      dispatch(showErrorMessage(`Error reading script "${scriptName}"`));
+      reject(err);
+    } else {
+      dispatch({
+        type: "READ_SCRIPT_CONTENT",
+        payload: { scriptName, fileContent }
+      })
+      resolve();
+    }
+  });
 })
 
 export const saveFile = () => (dispatch, getState) => {
@@ -26,14 +46,18 @@ export const saveFile = () => (dispatch, getState) => {
     const script = scripts.files.find(s => s.fileName === selectedEditor.fileName);
 
     const scriptPath = path.join(projectPath, "sources", script.fileName);
-    fs.writeFileSync(scriptPath, script.content, "utf8");
+    fs.writeFile(scriptPath, script.content, "utf8", err => {
+      if (err) {
+        dispatch(showErrorMessage(`Error saving script "${script.fileName}"`));
+      } else {
+        dispatch(showInfoMessage(`Script "${script.fileName}" saved.`));
 
-    dispatch(showInfoMessage(`Script "${script.fileName}" saved.`));
-
-    dispatch({
-      type: "SCRIPT_SAVED",
-      payload: { fileName: script.fileName }
-    })
+        dispatch({
+          type: "SCRIPT_SAVED",
+          payload: { fileName: script.fileName }
+        })
+      }
+    });
   }
 }
 
