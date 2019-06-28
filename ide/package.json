@@ -28,6 +28,7 @@
     "engine": "./../engine",
     "i": "^0.3.6",
     "npm": "^6.5.0",
+    "qrcode-generator": "^1.4.3",
     "qri-tools": "./../tools",
     "react": "^16.7.0-alpha.2",
     "react-ace": "^6.3.2",

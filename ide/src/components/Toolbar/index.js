@@ -1,6 +1,6 @@
 import React from "react"
 import DialogBox from "../DialogBox"
-import { FileIcon, FolderIcon, SaveIcon, RunIcon } from "../Icons"
+import { FileIcon, FolderIcon, SaveIcon, RunIcon, QrIcon } from "../Icons"
 
 import "./styles.css";
 
@@ -10,16 +10,18 @@ export default class Toolbar extends React.Component {
     this.state = {
       newFileDialogOpen: false,
       newScriptName: "",
+      isQrDialogOpen: false,
     }
   }
 
   render() {
     const {
-      editorsLength, selectedEditor,
+      editorsLength, selectedEditor, qrData,
 
       onSave,
       onSaveAll,
       onRun,
+      onGenerateQr,
       onCreate
     }  = this.props;
 
@@ -33,6 +35,10 @@ export default class Toolbar extends React.Component {
         }}/>
         <FolderIcon />
         <RunIcon onClick={onRun} />
+        <QrIcon onClick={() => {
+          this.setState({ isQrDialogOpen: true });
+          onGenerateQr();
+        }} />
         {(() => {
           if (selectedEditor) {
             return <SaveIcon onClick={onSave} />
@@ -49,13 +55,25 @@ export default class Toolbar extends React.Component {
           }
         })()}
         {
+          (this.state.isQrDialogOpen && qrData) && (
+            <DialogBox>
+              <img src={qrData} />
+              <div>
+                <input type="button" value="Close" onClick={() => {
+                  this.setState({ isQrDialogOpen: false })
+                }} />
+              </div>
+            </DialogBox>
+          )
+        }
+        {
           this.state.newFileDialogOpen && (
             <DialogBox>
               <h2>New script</h2>
               <input
                 type="text"
                 value={this.state.newScriptName}
-                onChange={event => { 
+                onChange={event => {
                   this.setState({newScriptName: event.target.value});
                 }}
               />

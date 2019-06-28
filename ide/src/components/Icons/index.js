@@ -13,3 +13,4 @@ export const FileIcon = ({ ...props }) => <IconBase {...props} icon="file" />
 export const FolderIcon = ({ ...props }) => <IconBase {...props} icon="folder" />
 export const SaveIcon = ({ ...props }) => <IconBase {...props} icon="save" />
 export const RunIcon = ({ ...props }) => <IconBase {...props} icon="play" />
+export const QrIcon = ({ ...props }) => <IconBase {...props} icon="qrcode" />

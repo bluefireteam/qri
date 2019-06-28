@@ -1,13 +1,15 @@
 import { connect } from "react-redux";
-import { runGame } from "../../actions/game";
+import { runGame, generateQr } from "../../actions/game";
 import { saveSelectedFile, saveAllFiles, createScript } from "../../actions/fs";
 import Toolbar from "../../components/Toolbar";
 
 const mapStateToProps = ({
   workspace: { editors },
+  project: { qrData },
 }) => ({
   editorsLength: editors.length,
   selectedEditor: editors.find(e => e.selected),
+  qrData,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -22,6 +24,9 @@ const mapDispatchToProps = dispatch => ({
   },
   onCreate: scriptName => {
     dispatch(createScript(scriptName));
+  },
+  onGenerateQr: () => {
+    dispatch(generateQr());
   }
 })
 
