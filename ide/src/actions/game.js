@@ -4,7 +4,6 @@ const { BrowserWindow } = window.require("electron").remote;
 const compiler = qriTools.compiler.current;
 
 export const runGame = () => (dispatch, getState) => {
-  // compile game
 
   // Open emulator window
   const emulatorWindow = new BrowserWindow({ width: 800, height: 600 });
