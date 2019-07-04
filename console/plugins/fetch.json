@@ -2,7 +2,7 @@
   "cordova-plugin-screen-orientation": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-screen-orientation"
+      "id": "cordova-plugin-screen-orientation@^3.0.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -18,15 +18,7 @@
   "cordova-plugin-whitelist": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-whitelist@1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-browsersync": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-browsersync"
+      "id": "cordova-plugin-whitelist@^1.3.3"
     },
     "is_top_level": true,
     "variables": {}
